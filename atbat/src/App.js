@@ -80,7 +80,10 @@ class App extends Component {
   }
   
   handleHit = () => {
-    
+    this.setState({
+      ...reset,
+      last: 'Hit!'
+    })
   }
     
 }
