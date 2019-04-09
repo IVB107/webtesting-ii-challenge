@@ -11,6 +11,7 @@ class App extends Component {
     last: 'N/A'
   }
 
+  
   render() {
     return (
       <div className="App">
@@ -18,16 +19,50 @@ class App extends Component {
         <Dashboard 
           last={this.state.last}
           handleEvent={(event) => this.handleEvent(event)}
-        />
+          handleBall={this.handleBall}
+          handleStrike={this.handleStrike}
+          handleFoul={this.handleFoul}
+          handleHit={this.handleHit}
+          />
       </div>
     );
   }
-
-  handleEvent = event => {
-    console.log('Event: ', event);
-
+  
+  handleBall = () => {
+    const updated = { ...this.state };
+    
+    if (updated.balls === 3){
+      this.setState({
+        ...reset,
+        last: 'Ball 4 (Walk)'
+      })
+    } else {
+      this.setState({
+        ...this.state,
+        balls: updated.balls + 1,
+        last: `Ball ${updated.balls + 1}`
+      })
+    }
   }
+  
+  handleStrike = () => {
+    
+  }
+  
+  handleFoul = () => {
+    
+  }
+  
+  handleHit = () => {
+    
+  }
+    
+}
 
+const reset = {
+  balls: 0,
+  strikes: 0
 }
 
 export default App;
+  

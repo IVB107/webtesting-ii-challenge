@@ -6,10 +6,10 @@ const Dashboard = props => {
       <h2>Dashboard</h2>
       <p>Last Event: {props.last}</p>
       <div>
-        <button onClick={() => props.handleEvent('Ball')}>Ball</button>
-        <button onClick={() => props.handleEvent('Strike')}>Strike</button>
-        <button onClick={() => props.handleEvent('Foul')}>Foul</button>
-        <button onClick={() => props.handleEvent('Hit')}>Hit</button>
+        <button onClick={props.handleBall}>Ball</button>
+        <button onClick={props.handleStrike}>Strike</button>
+        <button onClick={props.handleFoul}>Foul</button>
+        <button onClick={props.handleHit}>Hit</button>
       </div>
     </div>
   )
