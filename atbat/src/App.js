@@ -63,6 +63,19 @@ class App extends Component {
   }
   
   handleFoul = () => {
+    const updated = { ...this.state };
+    
+    if (updated.strikes === 2){
+      this.setState({
+        last: 'Foul Ball'
+      })
+    } else {
+      this.setState({
+        ...this.state,
+        strikes: updated.strikes + 1,
+        last: `Foul Ball (Strike ${updated.strikes + 1})`
+      })
+    }
     
   }
   
