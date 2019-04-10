@@ -4,12 +4,31 @@ const Dashboard = props => {
   return (
     <div>
       <h2>Dashboard</h2>
-      <p>Last Event: {props.last}</p>
+      <p data-testid="last-event">{`Last Event: ${props.last}`}</p>
       <div>
-        <button onClick={props.handleBall}>Ball</button>
-        <button onClick={props.handleStrike}>Strike</button>
-        <button onClick={props.handleFoul}>Foul</button>
-        <button onClick={props.handleHit}>Hit</button>
+        <button 
+          data-testid="ball-btn" 
+          onClick={props.handleBall}
+          type="button"
+        >Ball</button>
+        &nbsp;
+        <button 
+          data-testid="strike-btn" 
+          onClick={props.handleStrike}
+          type="button"
+        >Strike</button>
+        &nbsp;
+        <button 
+          data-testid="foul-btn" 
+          onClick={props.handleFoul}
+          type="button"
+        >Foul</button>
+        &nbsp;
+        <button 
+          data-testid="hit-btn" 
+          onClick={props.handleHit}
+          type="button"
+        >Hit</button>
       </div>
     </div>
   )
